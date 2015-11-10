@@ -1,0 +1,10 @@
+* text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.odt binary
+*.png binary
+*.sln binary
+*.suo binary
+*.vcxproj* binary
+*.exe binary
+
