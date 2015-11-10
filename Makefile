@@ -1,9 +1,10 @@
-CC=/usr/local/mingw32/bin/i386-mingw32-gcc
 CC=/usr/bin/i686-w64-mingw32-gcc
+#CC=/usr/local/mingw32/bin/i386-mingw32-gcc
 OBJS=pkill.o
 TARGET=pkill.exe 
 INCLUDES=-I/usr/local/mingw32/include/
 LIBS=/usr/i686-w64-mingw32/sys-root/mingw/lib/libpsapi.a
+#LIBS=/usr/local/mingw32/lib/libpsapi.a
 
 .SUFFIXES: .cpp .o
 
