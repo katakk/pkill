@@ -1,0 +1,35 @@
+version: "{build}"
+
+shallow_clone: true
+
+environment:
+  global:
+    SETENVCMD: 'C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd'
+    VCVARSALLBAT14: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
+
+  matrix:
+    - VC: 10
+    - VC: 14
+      ARCH: x86
+    - VC: 14
+      ARCH: x64
+
+before_build:
+
+build_script:
+  - >
+    if %VC%==10
+    "%SETENVCMD%" /x86 /release &&
+    nmake /nologo %* &&
+    "%SETENVCMD%" /x64 /release &&
+    nmake /nologo %*
+  - if %VC%==14 "%VCVARSALLBAT14%" %ARCH% && nmake /nologo %*
+
+#after_build:
+#
+
+#test_script:
+#  - 
+
+#artifacts:
+#
