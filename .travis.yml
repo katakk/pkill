@@ -11,6 +11,9 @@ env:
 before_install:
       - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
+before_script:
+  - export CC=i686-w64-mingw32-gcc
+
 addons:
   coverity_scan:
     project:
@@ -18,6 +21,11 @@ addons:
       description: "Build submitted via Travis CI"
     build_command:   "make"
     branch_pattern: master
+  apt:
+    packages:
+      - binutils-mingw-w64-i686
+      - gcc-mingw-w64-i686
+      - wine
 
 script:
   - make
