@@ -34,6 +34,9 @@ deploy:
   provider: releases
   api_key:
     - secure: "ktFMoFgg2B8X+eTT4U8vJroJIoD6S63eh3w/K1gC7f5rF1qb1WbFuiUPV7qv2+wi6HC9aCVPPLq7j7Glkr6qYqeDbc8dsNtz2xKVprEp+02Wn3F2Qf0IZXp6twOteE6bWxGvcbjmWbFz6v4OpkFQ0xzhPiG8R+nrhEZ9d6jhzgsLX0DFByhlXqtgFVHSSzbsjHjQcY/ATaj70gnvb6TJh8PaOy2oLP5K7I3tOgOtrhqBi8aU/rA4ox7vTptPVaHHkv/i8lzCSZYt0bQw6KvjWe4Vq78A4IOMuN+SAqquwTnjJNEIKvWT3hBpSJN9DSmmQ65mwuBoDUia0Yyp/hGBjHdnch2b081/Jv5TUNAGILCMCIvtbwb7/khtt5GhDOaKo282UG4wmhcn9HqrMJOicb8BaSkdHnpyeVR2waFIkpfzbh8RWTWauYACV1lBNJ6LSjao/LQrTJ7RTw7Ad+co4foG1BmwaOjKln+HBRHMFA2igNCcvH3znrJBSEvDiuOCDyAyvok1pPGpdmguCVQiVnH69nU9EU6g14rAg0dO9lVi6x6mrHHB4J1Xmep+8U2oAjrfemgHbNo7g6pu7fUJPdXOcfswYK8bIr4/KkNyFt+PIP7Pq18ZUo++BDt6m2OSU7ID/wnYB4iysmVT2yGNrrz6dsAAA7pZ00QpMzpjCus="
-  file: pkill.zip
+  file:
+    - ps.exe
+    - pgrep.exe
+    - pkill.exe 
   skip_cleanup: true
   all_branches: true  # https://github.com/travis-ci/travis-ci/issues/1675
